@@ -1,0 +1,23 @@
+{
+  "name": "async-validate-obj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:xiechao06/async-validate-obj.git",
+  "author": "xiechao06 <xiechao06@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "should": "^13.2.3",
+    "should-sinon": "^0.0.6",
+    "sinon": "^6.3.4"
+  },
+  "scripts": {
+    "test": "mocha --watch"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it"
+    ]
+  }
+}
