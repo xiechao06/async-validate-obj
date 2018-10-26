@@ -1,7 +1,7 @@
-const match = require('./checker/match.js')
-const required = require('./checker/required.js')
+import match from './checker/match.js'
+import required from './checker/required.js'
 
-class ValidationError extends Error {
+export class ValidationError extends Error {
   constructor (errors) {
     let s = [
       'Validation error: ',
@@ -26,7 +26,7 @@ const isEmpty = function isEmpty (o) {
   return true
 }
 
-const validateObj = function validateObj (rules, obj) {
+export const validateObj = function validateObj (rules, obj) {
   if (obj === void 0) {
     return function (obj) {
       return _validateObj(rules, obj)
@@ -69,11 +69,7 @@ const _iter = async function _iter (rules, obj, errors, root) {
   }
 }
 
-module.exports = {
-  validateObj,
-  ValidationError,
-  checkers: {
-    match,
-    required
-  }
+export const checkers = {
+  match,
+  required
 }

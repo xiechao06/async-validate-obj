@@ -1,18 +1,28 @@
 {
   "name": "async-validate-obj",
   "version": "1.0.1",
-  "main": "index.js",
+  "main": "dist/async-validate-obj.common.js",
+  "module": "dist/async-validate-obj.esm.js",
   "repository": "git@github.com:xiechao06/async-validate-obj.git",
   "author": "xiechao06 <xiechao06@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
     "mocha": "^5.2.0",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
     "should": "^13.2.3",
     "should-sinon": "^0.0.6",
     "sinon": "^6.3.4"
   },
   "scripts": {
-    "test": "mocha --watch"
+    "test": "mocha --watch --require @babel/register --require @babel/polyfill --require source-map-support",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "standard": {
     "globals": [
