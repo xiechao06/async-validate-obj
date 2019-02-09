@@ -1,6 +1,6 @@
+import '@babel/polyfill'
 import match from './checker/match.js'
 import required from './checker/required.js'
-import '@babel/polyfill'
 
 export class ValidationError extends Error {
   constructor (errors) {
