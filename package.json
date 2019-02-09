@@ -1,6 +1,6 @@
 {
   "name": "async-validate-obj",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/async-validate-obj.common.js",
   "module": "dist/async-validate-obj.esm.js",
   "repository": "git@github.com:xiechao06/async-validate-obj.git",
