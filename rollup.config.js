@@ -1,5 +1,6 @@
 import babel from 'rollup-plugin-babel'
 import pkg from './package.json'
+import resolve from 'rollup-plugin-node-resolve'
 
 export default [
   // CommonJS (for Node) and ES module (for bundlers) build.
@@ -11,13 +12,11 @@ export default [
     input: 'index.js',
     output: [
       { file: pkg.main, format: 'cjs' },
-      { file: pkg.module, format: 'es' }
+      { file: pkg.module, format: 'esm' }
     ],
     plugins: [
-      babel({
-        exclude: ['node_modules/**'],
-        presets: [['@babel/preset-env']]
-      })
+      babel(),
+      resolve()
     ]
   }
 ]

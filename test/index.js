@@ -1,7 +1,7 @@
 const sinon = require('sinon')
 require('should')
 require('should-sinon')
-const { validateObj, ValidationError } = require('../')
+const { validateObj, ValidationError } = require('../index')
 
 describe('validate obj', function () {
   it('simple', async function () {

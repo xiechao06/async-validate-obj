@@ -1,5 +1,5 @@
 require('should')
-const required = require('../checker/required')
+const { required } = require('../index').checkers
 
 describe('required', function () {
   it('pass', function () {
