@@ -29,7 +29,7 @@ await validateObj({
 }, { foo: { bar: 1 } })
 ```
 
-* array of checkers applied to one field1
+* array of checkers applied to one field
 
 ```javascript
 await validateObj({
