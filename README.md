@@ -1,4 +1,7 @@
 # async-validate-obj
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/xiechao06/async-validate-obj.svg)](https://greenkeeper.io/)
+
 a utility supports asynchronous validation
 
 ## Motivation
