@@ -35,5 +35,7 @@
       "it"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "caniuse-lite": "^1.0.30000997"
+  }
 }
