@@ -5,7 +5,7 @@ const { validateObj, ValidationError } = require('../index')
 
 describe('validate obj', function () {
   it('simple', async function () {
-    let aRule = sinon.spy()
+    const aRule = sinon.spy()
     await validateObj({
       a: aRule
     })({ a: 1 })
@@ -13,8 +13,8 @@ describe('validate obj', function () {
   })
 
   it('multiple rules', async function () {
-    let aRule = sinon.spy()
-    let bRule = sinon.spy()
+    const aRule = sinon.spy()
+    const bRule = sinon.spy()
     await validateObj({
       a: [aRule, bRule]
     })({ a: 1 })
@@ -23,8 +23,8 @@ describe('validate obj', function () {
   })
 
   it('nested', async function () {
-    let aRule = sinon.spy()
-    let bRule = sinon.spy()
+    const aRule = sinon.spy()
+    const bRule = sinon.spy()
     await validateObj({
       a: {
         b: [aRule, bRule]

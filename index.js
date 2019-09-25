@@ -4,7 +4,7 @@ import required from './checkers/required.js'
 
 export class ValidationError extends Error {
   constructor (errors) {
-    let s = [
+    const s = [
       'Validation error: ',
       Object.entries(errors).map(
         ([k, v]) => '   * ' + k + '-' + v
@@ -16,8 +16,8 @@ export class ValidationError extends Error {
 }
 
 const isEmpty = function isEmpty (o) {
-  for (let k in o) {
-    if (o.hasOwnProperty(k)) {
+  for (const k in o) {
+    if (Object.prototype.hasOwnProperty.call(o, k)) {
       if (typeof o[k] === 'object' && isEmpty(o[k])) {
         continue
       }
@@ -28,7 +28,7 @@ const isEmpty = function isEmpty (o) {
 }
 
 export const validateObj = function validateObj (rules, obj) {
-  if (obj === void 0) {
+  if (obj === undefined) {
     return function (obj) {
       return _validateObj(rules, obj)
     }
@@ -37,17 +37,17 @@ export const validateObj = function validateObj (rules, obj) {
 }
 
 const _validateObj = async function (rules, obj) {
-  let errors = {}
+  const errors = {}
   await _iter(rules, obj, errors, obj)
   if (isEmpty(errors)) {
     return
   }
-  let e = new ValidationError(errors)
+  const e = new ValidationError(errors)
   throw e
 }
 
 const _iter = async function _iter (rules, obj, errors, root) {
-  for (let k in rules) {
+  for (const k in rules) {
     if (typeof rules[k] === 'function') {
       try {
         await rules[k].apply(obj, [obj[k], root])
@@ -55,7 +55,7 @@ const _iter = async function _iter (rules, obj, errors, root) {
         errors[k] = e.message
       }
     } else if (Array.isArray(rules[k])) {
-      for (let rule of rules[k]) {
+      for (const rule of rules[k]) {
         try {
           await rule.apply(obj, [obj[k], root])
         } catch (e) {

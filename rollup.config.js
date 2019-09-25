@@ -12,7 +12,7 @@ export default [
   {
     input: pkg.source,
     output: [
-      { file: pkg.main, format: 'cjs' },
+      { file: pkg.main, format: 'cjs' }
     ],
     plugins: [
       babel(),
