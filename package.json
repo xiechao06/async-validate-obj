@@ -9,7 +9,6 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
     "babel-plugin-add-module-exports": "^1.0.0",
@@ -21,6 +20,7 @@
     "should": "^13.2.3",
     "should-sinon": "^0.0.6",
     "sinon": "^6.3.4",
+    "caniuse-lite": "^1.0.30000997",
     "standard": "^14.3.1"
   },
   "scripts": {
@@ -36,6 +36,6 @@
     ]
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30000997"
+    "@babel/polyfill": "^7.6.0"
   }
 }
